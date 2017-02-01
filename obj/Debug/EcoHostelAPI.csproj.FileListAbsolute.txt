@@ -61,3 +61,7 @@ c:\users\angel murchison\documents\visual studio 2015\Projects\EcoHostelAPI\EcoH
 c:\users\angel murchison\documents\visual studio 2015\Projects\EcoHostelAPI\EcoHostelAPI\obj\Debug\EcoHostelAPI.csprojResolveAssemblyReference.cache
 c:\users\angel murchison\documents\visual studio 2015\Projects\EcoHostelAPI\EcoHostelAPI\obj\Debug\EcoHostelAPI.dll
 c:\users\angel murchison\documents\visual studio 2015\Projects\EcoHostelAPI\EcoHostelAPI\obj\Debug\EcoHostelAPI.pdb
+C:\Users\Angel Murchison\documents\visual studio 2015\Projects\EcoHostelAPI\EcoHostelAPI\obj\Debug\EcoHostelAPI.Migrations.Init.resources
+C:\Users\Angel Murchison\documents\visual studio 2015\Projects\EcoHostelAPI\EcoHostelAPI\obj\Debug\EcoHostelAPI.csproj.GenerateResource.Cache
+C:\Users\Angel Murchison\documents\visual studio 2015\Projects\EcoHostelAPI\EcoHostelAPI\obj\Debug\EcoHostelAPI.Migrations.Schema.resources
+C:\Users\Angel Murchison\documents\visual studio 2015\Projects\EcoHostelAPI\EcoHostelAPI\obj\Debug\EcoHostelAPI.Migrations.UserIDTypechange.resources

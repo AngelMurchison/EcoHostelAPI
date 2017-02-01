@@ -9,7 +9,7 @@ using EcoHostelAPI.Models;
 namespace EcoHostelAPI.Models
 {
     public class Reservation
-    {
+    { 
         [Key]
         public int ID { get; set; }
         [Required]

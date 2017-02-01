@@ -195,15 +195,28 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReservationsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702011734568_Init.cs" />
+    <Compile Include="Migrations\201702011734568_Init.Designer.cs">
+      <DependentUpon>201702011734568_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702012218292_Schema.cs" />
+    <Compile Include="Migrations\201702012218292_Schema.Designer.cs">
+      <DependentUpon>201702012218292_Schema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702012223296_UserIDTypechange.cs" />
+    <Compile Include="Migrations\201702012223296_UserIDTypechange.Designer.cs">
+      <DependentUpon>201702012223296_UserIDTypechange.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModel.cs" />
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\Room.cs" />
-    <Compile Include="Models\Users.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -247,7 +260,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -274,6 +289,17 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702011734568_Init.resx">
+      <DependentUpon>201702011734568_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702012218292_Schema.resx">
+      <DependentUpon>201702012218292_Schema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702012223296_UserIDTypechange.resx">
+      <DependentUpon>201702012223296_UserIDTypechange.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
