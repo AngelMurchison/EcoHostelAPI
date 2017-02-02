@@ -18,6 +18,7 @@ namespace EcoHostelAPI.Controllers
         private ApplicationDBContext db = new ApplicationDBContext();
 
         // GET: api/Reservations
+        [Authorize]
         public IHttpActionResult GetReservations()
         {
             return Ok(db.Reservations);
@@ -43,6 +44,7 @@ namespace EcoHostelAPI.Controllers
             return Ok(reservation);
         }
         // POST api/<controller>
+        [Authorize]
         public IHttpActionResult Post(Reservation Reservation)
         {
             db.Reservations.Add(Reservation);
@@ -51,6 +53,7 @@ namespace EcoHostelAPI.Controllers
         }
 
         // PUT api/<controller>/5
+        [Authorize]
         public IHttpActionResult Put([FromUri]int id, Reservation Reservation)
         {
             db.Reservations.AddOrUpdate(Reservation);
@@ -59,6 +62,7 @@ namespace EcoHostelAPI.Controllers
         }
 
         // DELETE api/<controller>/5
+        [Authorize]
         public IHttpActionResult Delete(int id)
         {
             var toDelete = db.Reservations.First(f => f.ID == id);
