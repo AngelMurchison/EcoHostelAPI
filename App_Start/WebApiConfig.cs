@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using EcoHostelAPI.App_Start;
+using System.Web.Configuration;
 
 namespace EcoHostelAPI
 {
@@ -11,6 +13,15 @@ namespace EcoHostelAPI
         {
             // Web API configuration and services
 
+            var clientID = WebConfigurationManager.AppSettings["auth0:ClientId"];
+            var clientSecret = WebConfigurationManager.AppSettings["auth0:ClientSecret"];
+
+            config.MessageHandlers.Add(new JsonWebTokenValidationHandler()
+            {
+                Audience = clientID,
+                SymmetricKey = clientSecret,
+                IsSecretBase64Encoded = false
+            });
             // Web API routes
             config.MapHttpAttributeRoutes();
 
