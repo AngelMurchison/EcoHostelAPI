@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using EcoHostelAPI.Models;
+using System.Data.Entity.Migrations;
 
 namespace EcoHostelAPI.Controllers
 {
@@ -17,89 +18,121 @@ namespace EcoHostelAPI.Controllers
         private ApplicationDBContext db = new ApplicationDBContext();
 
         // GET: api/Reservations
-        public IQueryable<Reservation> GetReservations()
+        public IHttpActionResult GetReservations()
         {
-            return db.Reservations;
+            return Ok(db.Reservations);
         }
 
-        // GET: api/Reservations/5
+        // GET: api/Reservations/
         [ResponseType(typeof(Reservation))]
-        public IHttpActionResult GetReservation(int id)
+        [Authorize]
+        public IHttpActionResult GetReservation(string userid)
         {
-            Reservation reservation = db.Reservations.Find(id);
-            if (reservation == null)
+            var user = User.Identity as System.Security.Claims.ClaimsIdentity;
+            var usersname = user.Name;
+            var usertoken = user.BootstrapContext as String;
+
+            // claims has a bunch of properties, this is where the meta data from Auth0 will live
+            foreach (var claim in user.Claims)
             {
-                return NotFound();
+                var key = claim.Type;
+                var value = claim.Value;
             }
 
+            var reservation = db.Reservations.Where(f => f.userID == usertoken).ToList();
             return Ok(reservation);
         }
-
-        // PUT: api/Reservations/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutReservation(int id, Reservation reservation)
+        // POST api/<controller>
+        public IHttpActionResult Post(Reservation Reservation)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != reservation.ID)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(reservation).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ReservationExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
-        }
-
-        // POST: api/Reservations
-        [ResponseType(typeof(Reservation))]
-        public IHttpActionResult PostReservation(Reservation reservation)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            db.Reservations.Add(reservation);
+            db.Reservations.Add(Reservation);
             db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = reservation.ID }, reservation);
+            return Ok();
         }
+
+        // PUT api/<controller>/5
+        public IHttpActionResult Put([FromUri]int id, Reservation Reservation)
+        {
+            db.Reservations.AddOrUpdate(Reservation);
+            db.SaveChanges();
+            return Ok();
+        }
+
+        // DELETE api/<controller>/5
+        public IHttpActionResult Delete(int id)
+        {
+            var toDelete = db.Reservations.First(f => f.ID == id);
+            db.Reservations.Remove(toDelete);
+            db.SaveChanges();
+            return Ok();
+        }
+
+
+        //// PUT: api/Reservations/5
+        //[ResponseType(typeof(void))]
+        //public IHttpActionResult PutReservation(int id, Reservation reservation)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    if (id != reservation.ID)
+        //    {
+        //        return BadRequest();
+        //    }
+
+        //    db.Entry(reservation).State = EntityState.Modified;
+
+        //    try
+        //    {
+        //        db.SaveChanges();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!ReservationExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
+
+        //    return StatusCode(HttpStatusCode.NoContent);
+        //}
+
+        //// POST: api/Reservations
+        //[ResponseType(typeof(Reservation))]
+        //public IHttpActionResult PostReservation(Reservation reservation)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    db.Reservations.Add(reservation);
+        //    db.SaveChanges();
+
+        //    return CreatedAtRoute("DefaultApi", new { id = reservation.ID }, reservation);
+        //}
 
         // DELETE: api/Reservations/5
-        [ResponseType(typeof(Reservation))]
-        public IHttpActionResult DeleteReservation(int id)
-        {
-            Reservation reservation = db.Reservations.Find(id);
-            if (reservation == null)
-            {
-                return NotFound();
-            }
+        //[ResponseType(typeof(Reservation))]
+        //public IHttpActionResult DeleteReservation(int id)
+        //{
+        //    Reservation reservation = db.Reservations.Find(id);
+        //    if (reservation == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            db.Reservations.Remove(reservation);
-            db.SaveChanges();
+        //    db.Reservations.Remove(reservation);
+        //    db.SaveChanges();
 
-            return Ok(reservation);
-        }
+        //    return Ok(reservation);
+        //}
 
         protected override void Dispose(bool disposing)
         {
