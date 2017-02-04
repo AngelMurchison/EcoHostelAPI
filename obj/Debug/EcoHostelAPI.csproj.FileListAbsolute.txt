@@ -153,3 +153,4 @@ C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.csproj.GenerateResource.Cache
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.dll
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.pdb
+C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\Swashbuckle.Core.dll

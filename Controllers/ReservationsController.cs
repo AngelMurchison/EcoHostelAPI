@@ -15,7 +15,7 @@ namespace EcoHostelAPI.Controllers
 {
     public class ReservationsController : ApiController
     {
-        private ApplicationDBContext db = new ApplicationDBContext();
+        public static ApplicationDBContext db = new ApplicationDBContext();
 
         // GET: api/Reservations
         [Authorize]
@@ -24,32 +24,23 @@ namespace EcoHostelAPI.Controllers
             return Ok(db.Reservations);
         }
 
-        // GET: api/Reservations/
-        [ResponseType(typeof(Reservation))]
-        [Authorize]
-        public IHttpActionResult GetReservation(string userid)
-        {
-            var user = User.Identity as System.Security.Claims.ClaimsIdentity;
-            var usersname = user.Name;
-            var usertoken = user.BootstrapContext as String;
-
-            // claims has a bunch of properties, this is where the meta data from Auth0 will live
-            foreach (var claim in user.Claims)
-            {
-                var key = claim.Type;
-                var value = claim.Value;
-            }
-
-            var reservation = db.Reservations.Where(f => f.userID == usertoken).ToList();
-            return Ok(reservation);
-        }
         // POST api/<controller>
         [Authorize]
         public IHttpActionResult Post(Reservation Reservation)
         {
+            var user = User.Identity as System.Security.Claims.ClaimsIdentity;
+            var userExists = UserServices.verifyUser(user);
+
+            if (!userExists)
+            {
+                var newuser = UserServices.createUser(user);
+                Reservation.user = newuser;
+                Reservation.userID = newuser.ID;
+            }
+
             db.Reservations.Add(Reservation);
             db.SaveChanges();
-            return Ok();
+            return Ok(Reservation);
         }
 
         // PUT api/<controller>/5
