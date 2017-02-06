@@ -18,6 +18,10 @@ namespace EcoHostelAPI.Models
 
         public virtual DbSet<Reservation> Reservations { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
-        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<VolunteerTime> volunteerTimes { get; set; }
+        public virtual DbSet<Class> Classes { get; set; }
+        public virtual DbSet<Rule> Rules { get; set; }
+        public virtual DbSet<Event> Events { get; set; }
     }
 }

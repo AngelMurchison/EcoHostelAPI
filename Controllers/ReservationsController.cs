@@ -17,50 +17,51 @@ namespace EcoHostelAPI.Controllers
     {
         public static ApplicationDBContext db = new ApplicationDBContext();
 
-        // GET: api/Reservations
-        [Authorize]
-        public IHttpActionResult GetReservations()
-        {
-            return Ok(db.Reservations);
-        }
+        //// GET: api/Reservations
+        //[Authorize]
+        //public IHttpActionResult GetReservations()
+        //{
+        //    return Ok(db.Reservations);
+        //}
 
-        // POST api/<controller>
-        [Authorize]
-        public IHttpActionResult Post(Reservation Reservation)
-        {
-            var user = User.Identity as System.Security.Claims.ClaimsIdentity;
-            var userExists = UserServices.verifyUser(user);
+        //// POST api/<controller>
+        //[Authorize]
+        //public IHttpActionResult Post(Reservation Reservation)
+        //{
+            
+        //    var user = User.Identity as System.Security.Claims.ClaimsIdentity;
+        //    var userExists = UserServices.verifyUser(user);
 
-            if (!userExists)
-            {
-                var newuser = UserServices.createUser(user);
-                Reservation.user = newuser;
-                Reservation.userID = newuser.ID;
-            }
+        //    if (!userExists)
+        //    {
+        //        var newuser = UserServices.createUser(user);
+        //        Reservation.user = newuser;
+        //        Reservation.userID = newuser.ID;
+        //    }
 
-            db.Reservations.Add(Reservation);
-            db.SaveChanges();
-            return Ok(Reservation);
-        }
+        //    db.Reservations.Add(Reservation);
+        //    db.SaveChanges();
+        //    return Ok(Reservation);
+        //}
 
-        // PUT api/<controller>/5
-        [Authorize]
-        public IHttpActionResult Put([FromUri]int id, Reservation Reservation)
-        {
-            db.Reservations.AddOrUpdate(Reservation);
-            db.SaveChanges();
-            return Ok();
-        }
+        //// PUT api/<controller>/5
+        //[Authorize]
+        //public IHttpActionResult Put([FromUri]int id, Reservation Reservation)
+        //{
+        //    db.Reservations.AddOrUpdate(Reservation);
+        //    db.SaveChanges();
+        //    return Ok();
+        //}
 
-        // DELETE api/<controller>/5
-        [Authorize]
-        public IHttpActionResult Delete(int id)
-        {
-            var toDelete = db.Reservations.First(f => f.ID == id);
-            db.Reservations.Remove(toDelete);
-            db.SaveChanges();
-            return Ok();
-        }
+        //// DELETE api/<controller>/5
+        //[Authorize]
+        //public IHttpActionResult Delete(int id)
+        //{
+        //    var toDelete = db.Reservations.First(f => f.ID == id);
+        //    db.Reservations.Remove(toDelete);
+        //    db.SaveChanges();
+        //    return Ok();
+        //}
 
 
         //// PUT: api/Reservations/5

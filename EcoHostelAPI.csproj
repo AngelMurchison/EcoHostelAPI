@@ -232,6 +232,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -291,12 +292,24 @@
     <Compile Include="Migrations\201702012223296_UserIDTypechange.Designer.cs">
       <DependentUpon>201702012223296_UserIDTypechange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702052300256_SwitchingOverToWindowsPC.cs" />
+    <Compile Include="Migrations\201702052300256_SwitchingOverToWindowsPC.Designer.cs">
+      <DependentUpon>201702052300256_SwitchingOverToWindowsPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702062020558_added events, classes, rules, and volunteer times.cs" />
+    <Compile Include="Migrations\201702062020558_added events, classes, rules, and volunteer times.Designer.cs">
+      <DependentUpon>201702062020558_added events, classes, rules, and volunteer times.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Class.cs" />
+    <Compile Include="Models\Event.cs" />
     <Compile Include="Models\IdentityModel.cs" />
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\Rule.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Models\UserServices.cs" />
+    <Compile Include="Models\Services\UserServices.cs" />
+    <Compile Include="Models\VolunteerTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -333,8 +346,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="LoginCallback.ashx" />
-    <None Include="Properties\PublishProfiles\EcoHostelAPI - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\EcoHostelAPI - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\EcoHostelAPI - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\EcoHostelAPI - Web Deploy %282%29.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -380,6 +393,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702012223296_UserIDTypechange.resx">
       <DependentUpon>201702012223296_UserIDTypechange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702052300256_SwitchingOverToWindowsPC.resx">
+      <DependentUpon>201702052300256_SwitchingOverToWindowsPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702062020558_added events, classes, rules, and volunteer times.resx">
+      <DependentUpon>201702062020558_added events, classes, rules, and volunteer times.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

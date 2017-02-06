@@ -154,3 +154,5 @@ C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.dll
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.pdb
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\Swashbuckle.Core.dll
+C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.Migrations.SwitchingOverToWindowsPC.resources
+C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.Migrations.addedeventsclassesrulesandvolunteertimes.resources

@@ -20,7 +20,6 @@ namespace EcoHostelAPI.Controllers
         [Authorize]
         public IHttpActionResult GetUsersReservation()
         {
-            // TODO: Add collection variables for username, email, phone, id from user.claims. Use user.claims.type to step through and grab each one.
             var user = User.Identity as System.Security.Claims.ClaimsIdentity;
             var userid = user.Claims.First(f => f.Type == "user_id").Value;
             var reservation = db.Reservations.LastOrDefault(f => f.userID == userid);
