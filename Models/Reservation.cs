@@ -13,9 +13,10 @@ namespace EcoHostelAPI.Models
         [Key]
         public int ID { get; set; }
         [Required]
-        public int roomID { get; set; }
-        [Required]
         public string userID { get; set; }
+        public int roomID { get; set; }
+        public string roomType { get; set; }
+        public int guestCount { get; set; }
         public DateTime startDate { get; set; }
         public DateTime endDate { get; set; }
 

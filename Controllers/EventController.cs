@@ -12,19 +12,14 @@ using EcoHostelAPI.Models;
 
 namespace EcoHostelAPI.Controllers
 {
-    public class UserController : ApiController
+    public class EventController : ApiController
     {
         private ApplicationDBContext db = new ApplicationDBContext();
 
-        // GET: api/User
-        [Authorize]
-        public IHttpActionResult GetUsersReservation()
+        // GET: api/Event
+        public IHttpActionResult GetEvents()
         {
-            var user = User.Identity as System.Security.Claims.ClaimsIdentity;
-            var userid = user.Claims.First(f => f.Type == "user_id").Value;
-            var reservation = db.Reservations.LastOrDefault(f => f.userID == userid);
-
-            return Ok(reservation);
+            return Ok(db.Events);
         }
 
         protected override void Dispose(bool disposing)
@@ -35,10 +30,9 @@ namespace EcoHostelAPI.Controllers
             }
             base.Dispose(disposing);
         }
-
-        private bool ReservationExists(int id)
+        private bool EventExists(int id)
         {
-            return db.Reservations.Count(e => e.ID == id) > 0;
+            return db.Events.Count(e => e.ID == id) > 0;
         }
     }
 }

@@ -9,6 +9,7 @@ namespace EcoHostelAPI.Models
     {
         public int ID { get; set; }
         public string title { get; set; }
+        public string location { get; set; }
         public DateTime datetime { get; set; }
     }
 }

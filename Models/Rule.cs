@@ -5,7 +5,7 @@ using System.Web;
 
 namespace EcoHostelAPI.Models
 {
-    public class Rule
+    public class Rules
     {
         public int ID { get; set; }
         public string title { get; set; }

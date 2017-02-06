@@ -232,7 +232,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -271,9 +270,12 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\ClassController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ReservationsController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\ReservationController.cs" />
+    <Compile Include="Controllers\RuleController.cs" />
+    <Compile Include="Controllers\VolunteerTimeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -300,6 +302,18 @@
     <Compile Include="Migrations\201702062020558_added events, classes, rules, and volunteer times.Designer.cs">
       <DependentUpon>201702062020558_added events, classes, rules, and volunteer times.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702062033375_changed reservation schema.cs" />
+    <Compile Include="Migrations\201702062033375_changed reservation schema.Designer.cs">
+      <DependentUpon>201702062033375_changed reservation schema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702062103254_Adjusted schemas.cs" />
+    <Compile Include="Migrations\201702062103254_Adjusted schemas.Designer.cs">
+      <DependentUpon>201702062103254_Adjusted schemas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702062140330_VariousAdjustmentsToSchema.cs" />
+    <Compile Include="Migrations\201702062140330_VariousAdjustmentsToSchema.Designer.cs">
+      <DependentUpon>201702062140330_VariousAdjustmentsToSchema.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Event.cs" />
@@ -308,9 +322,11 @@
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\Rule.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Models\Services\UserServices.cs" />
+    <Compile Include="Services\ReservationServices.cs" />
+    <Compile Include="Services\UserServices.cs" />
     <Compile Include="Models\VolunteerTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ReservationVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -399,6 +415,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702062020558_added events, classes, rules, and volunteer times.resx">
       <DependentUpon>201702062020558_added events, classes, rules, and volunteer times.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702062033375_changed reservation schema.resx">
+      <DependentUpon>201702062033375_changed reservation schema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702062103254_Adjusted schemas.resx">
+      <DependentUpon>201702062103254_Adjusted schemas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702062140330_VariousAdjustmentsToSchema.resx">
+      <DependentUpon>201702062140330_VariousAdjustmentsToSchema.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
