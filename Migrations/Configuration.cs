@@ -143,23 +143,45 @@ namespace EcoHostelAPI.Migrations
             //context.volunteerTimes.AddOrUpdate(v => v.title, volunteertime1);
             //context.volunteerTimes.AddOrUpdate(v => v.title, volunteertime2);
             //context.volunteerTimes.AddOrUpdate(v => v.title, volunteertime3);
-            var room = new Room()
-            {
-                roomType = "single"
-            };
-            var room1 = new Room()
-            {
-                roomType = "double"
-            };
-            var room2 = new Room()
-            {
-                roomType = "commmunal"
-            };
+            //var room = new Room()
+            //{
+            //    roomType = "single"
+            //};
+            //var room1 = new Room()
+            //{
+            //    roomType = "double"
+            //};
+            //var room2 = new Room()
+            //{
+            //    roomType = "commmunal"
+            //};
 
-            context.Rooms.AddOrUpdate(r => r.roomType, room);
-            context.Rooms.AddOrUpdate(r => r.roomType, room1);
-            context.Rooms.AddOrUpdate(r => r.roomType, room2);
-            context.SaveChanges();
+            //context.Rooms.AddOrUpdate(r => r.roomType, room);
+            //context.Rooms.AddOrUpdate(r => r.roomType, room1);
+            //context.Rooms.AddOrUpdate(r => r.roomType, room2);
+            //context.SaveChanges();
+            //var reservation0 = new Reservation()
+            //{
+            //    startDate = DateTime.Now,
+            //    endDate = DateTime.Now.AddDays(30),
+            //    roomID = 1
+            //};
+            //var reservation1 = new Reservation()
+            //{
+            //    startDate = DateTime.Now,
+            //    endDate = DateTime.Now.AddDays(40),
+            //    roomID = 1
+            //};
+            //var reservation2 = new Reservation()
+            //{
+            //    startDate = DateTime.Now,
+            //    endDate = DateTime.Now.AddDays(45),
+            //    roomID = 2
+            //};
+            //context.Reservations.AddOrUpdate(reservation0);
+            //context.Reservations.AddOrUpdate(reservation1);
+            //context.Reservations.AddOrUpdate(reservation2);
+            //context.SaveChanges();
         }
     }
 }

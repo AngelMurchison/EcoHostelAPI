@@ -154,3 +154,4 @@ C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.Migrations.adjustedschema.resources
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.Migrations.RemovedUserForeignKEY.resources
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.Migrations.MostRecent.resources
+C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.csprojResolveAssemblyReference.cache
