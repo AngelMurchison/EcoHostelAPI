@@ -14,25 +14,11 @@ namespace EcoHostelAPI.Controllers
 {
     public class EventController : ApiController
     {
-        private ApplicationDBContext db = new ApplicationDBContext();
-
         // GET: api/Event
         public IHttpActionResult GetEvents()
         {
+            var db = new ApplicationDBContext();
             return Ok(db.Events);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-        private bool EventExists(int id)
-        {
-            return db.Events.Count(e => e.ID == id) > 0;
         }
     }
 }

@@ -14,25 +14,11 @@ namespace EcoHostelAPI.Controllers
 {
     public class ClassController : ApiController
     {
-        private ApplicationDBContext db = new ApplicationDBContext();
-
         // GET: api/Class
         public IHttpActionResult GetClasses()
         {
+            var db = new ApplicationDBContext();
             return Ok(db.Classes);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-        private bool ClassExists(int id)
-        {
-            return db.Classes.Count(e => e.ID == id) > 0;
         }
     }
 }

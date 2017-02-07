@@ -117,13 +117,6 @@ C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\Auth0.AuthenticationApi.xml
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\Auth0.Core.pdb
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\Auth0.Core.xml
-C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\EntityFramework.xml
-C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\EntityFramework.SqlServer.xml
-C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\Microsoft.AI.Web.xml
-C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\Microsoft.ApplicationInsights.xml
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\Microsoft.IdentityModel.Tokens.xml
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\Microsoft.Owin.xml
@@ -146,7 +139,6 @@ C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\System.Web.WebPages.Razor.xml
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\bin\Antlr3.Runtime.pdb
-C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.csprojResolveAssemblyReference.cache
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.Migrations.Init.resources
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.Migrations.Schema.resources
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.Migrations.UserIDTypechange.resources
@@ -159,3 +151,6 @@ C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.Migrations.changedreservationschema.resources
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.Migrations.Adjustedschemas.resources
 C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.Migrations.VariousAdjustmentsToSchema.resources
+C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.Migrations.adjustedschema.resources
+C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.Migrations.RemovedUserForeignKEY.resources
+C:\Users\Angel Murchison\Documents\Visual Studio 2015\Projects\EcoHostelAPI\obj\Debug\EcoHostelAPI.Migrations.MostRecent.resources

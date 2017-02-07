@@ -17,15 +17,23 @@ namespace EcoHostelAPI.Controllers
 {
     public class ReservationController : ApiController
     {
-        public static ApplicationDBContext db = new ApplicationDBContext();
 
         // GET: api/Reservation
         [Authorize]
+        [ResponseType(typeof (ReservationVM))]
         public IHttpActionResult GetUsersReservation()
         {
             var user = User.Identity as System.Security.Claims.ClaimsIdentity;
-            var userid = user.Claims.First(f => f.Type == "user_id").Value;
-            var reservation = db.Reservations.LastOrDefault(f => f.userID == userid);
+            var userid = user.Name;
+            var db = new ApplicationDBContext();
+            var reservation = db.Reservations.OrderByDescending(f => f.startDate).FirstOrDefault();
+            if (reservation==null)
+            {
+                return Ok(new ReservationVM()
+                {
+                    found = false
+                });
+            }
             var vm = Services.ReservationServices.convertToVM(reservation);
 
             return Ok(vm);
@@ -33,24 +41,15 @@ namespace EcoHostelAPI.Controllers
 
         // POST: api/Reservation
         [Authorize]
+        // TODO: Change how it stores userid why is this not hitting the database.
         public IHttpActionResult PostUsersReservation(ReservationVM newReservation)
         {
+            var db = new ApplicationDBContext();
             var user = User.Identity as System.Security.Claims.ClaimsIdentity;
             var reservation = ReservationServices.convertFromVM(newReservation, user);
+            db.Reservations.AddOrUpdate(reservation);
+            db.SaveChanges();
             return Ok(reservation);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-        private bool ReservationExists(int id)
-        {
-            return db.Reservations.Count(e => e.ID == id) > 0;
         }
     }
 }

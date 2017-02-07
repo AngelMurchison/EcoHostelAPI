@@ -13,26 +13,12 @@ using EcoHostelAPI.Models;
 namespace EcoHostelAPI.Controllers
 {
     public class RuleController : ApiController
-    {
-        private ApplicationDBContext db = new ApplicationDBContext();
-
+    { 
         // GET: api/Rule
         public IHttpActionResult GetRules()
         {
+            var db = new ApplicationDBContext(); 
             return Ok(db.Rules);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-        private bool RuleExists(int id)
-        {
-            return db.Rules.Count(e => e.ID == id) > 0;
         }
     }
 }

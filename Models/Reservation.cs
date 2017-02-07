@@ -12,7 +12,6 @@ namespace EcoHostelAPI.Models
     { 
         [Key]
         public int ID { get; set; }
-        [Required]
         public string userID { get; set; }
         public int roomID { get; set; }
         public string roomType { get; set; }
@@ -22,8 +21,6 @@ namespace EcoHostelAPI.Models
 
         [ForeignKey("roomID")]
         public virtual Room room { get; set; }
-        [ForeignKey("userID")]
-        public virtual User user { get; set; }
 
     }
 }

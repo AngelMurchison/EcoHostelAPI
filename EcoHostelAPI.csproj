@@ -314,6 +314,18 @@
     <Compile Include="Migrations\201702062140330_VariousAdjustmentsToSchema.Designer.cs">
       <DependentUpon>201702062140330_VariousAdjustmentsToSchema.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702062207122_adjustedschema.cs" />
+    <Compile Include="Migrations\201702062207122_adjustedschema.Designer.cs">
+      <DependentUpon>201702062207122_adjustedschema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702071710098_Removed User ForeignKEY.cs" />
+    <Compile Include="Migrations\201702071710098_Removed User ForeignKEY.Designer.cs">
+      <DependentUpon>201702071710098_Removed User ForeignKEY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702071720220_MostRecent.cs" />
+    <Compile Include="Migrations\201702071720220_MostRecent.Designer.cs">
+      <DependentUpon>201702071720220_MostRecent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Event.cs" />
@@ -424,6 +436,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702062140330_VariousAdjustmentsToSchema.resx">
       <DependentUpon>201702062140330_VariousAdjustmentsToSchema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702062207122_adjustedschema.resx">
+      <DependentUpon>201702062207122_adjustedschema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702071710098_Removed User ForeignKEY.resx">
+      <DependentUpon>201702071710098_Removed User ForeignKEY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702071720220_MostRecent.resx">
+      <DependentUpon>201702071720220_MostRecent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

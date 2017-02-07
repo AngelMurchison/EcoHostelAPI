@@ -11,5 +11,8 @@ namespace EcoHostelAPI.ViewModels
         public DateTime toDate { get; set; }
         public int guestCount { get; set; }
         public string typeOfRoom { get; set; }
+        public string name { get; set; }
+        public string email { get; set; }
+        public bool found { get; set; }
     }
 }

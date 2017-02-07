@@ -14,25 +14,11 @@ namespace EcoHostelAPI.Controllers
 {
     public class VolunteerTimeController : ApiController
     {
-        private ApplicationDBContext db = new ApplicationDBContext();
-
         // GET: api/VolunteerTime
         public IHttpActionResult GetvolunteerTimes()
         {
+            var db = new ApplicationDBContext();
             return Ok(db.volunteerTimes);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-        private bool VolunteerTimeExists(int id)
-        {
-            return db.volunteerTimes.Count(e => e.ID == id) > 0;
         }
     }
 }

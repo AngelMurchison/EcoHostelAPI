@@ -19,10 +19,10 @@ namespace EcoHostelAPI.Services
                 roomID = db.Rooms.First(f => f.roomType == vm.typeOfRoom).ID,
                 startDate = vm.fromDate,
                 endDate = vm.toDate,
-                userID = user.Claims.FirstOrDefault(f => f.Type == "user_id").Value
+                userID = user.Name
             };
             reservation.room = db.Rooms.First(f => f.ID == reservation.roomID);
-            reservation.user = db.Users.First(f => f.ID == reservation.userID);
+            // reservation.user = db.Users.First(f => f.ID == reservation.userID);
             return reservation;
         }
         public static ReservationVM convertToVM(Reservation reservation)
@@ -32,7 +32,8 @@ namespace EcoHostelAPI.Services
                 fromDate = reservation.startDate,
                 toDate = reservation.endDate,
                 typeOfRoom = reservation.roomType,
-                guestCount = reservation.guestCount
+                guestCount = reservation.guestCount,
+                found= true
             };
 
             return vm;
