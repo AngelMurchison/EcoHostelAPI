@@ -53,6 +53,7 @@ namespace EcoHostelAPI.Controllers
         }
 
         // Delete: api/reservation
+        // TODO: Test this controller.
         [Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult Delete()
