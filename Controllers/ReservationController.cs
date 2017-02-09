@@ -17,8 +17,6 @@ namespace EcoHostelAPI.Controllers
 {
     public class ReservationController : ApiController
     {
-        //TODO: MAKE A DELETE FUNCTION
-
         // GET: api/reservation
         [Authorize]
         [ResponseType(typeof (ReservationVM))]
@@ -53,7 +51,6 @@ namespace EcoHostelAPI.Controllers
         }
 
         // Delete: api/reservation
-        // TODO: Test this controller.
         [Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult Delete()
@@ -69,6 +66,7 @@ namespace EcoHostelAPI.Controllers
                 });
             }
             db.Reservations.Remove(reservation);
+            db.SaveChanges();
             return Ok("Removed successfully.");
         }
     }

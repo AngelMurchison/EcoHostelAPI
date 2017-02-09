@@ -21,8 +21,6 @@ namespace EcoHostelAPI.Services
                 endDate = vm.toDate,
                 userID = user.Name
             };
-            reservation.room = db.Rooms.First(f => f.ID == reservation.roomID);
-            // reservation.user = db.Users.First(f => f.ID == reservation.userID);
             return reservation;
         }
         public static ReservationVM convertToVM(Reservation reservation)
