@@ -17,17 +17,16 @@ namespace EcoHostelAPI.Controllers
 {
     public class ReservationController : ApiController
     {
-
-        // GET: api/Reservation
+        // GET: api/reservation
         [Authorize]
         [ResponseType(typeof (ReservationVM))]
-        public IHttpActionResult GetUsersReservation()
+        public IHttpActionResult Get()
         {
             var user = User.Identity as System.Security.Claims.ClaimsIdentity;
             var userid = user.Name;
             var db = new ApplicationDBContext();
-            var reservation = db.Reservations.OrderByDescending(f => f.startDate).FirstOrDefault();
-            if (reservation==null)
+            var reservation = db.Reservations.OrderByDescending(f => f.startDate).FirstOrDefault(f => f.userID == user.Name);
+            if (reservation == null)
             {
                 return Ok(new ReservationVM()
                 {
@@ -35,21 +34,60 @@ namespace EcoHostelAPI.Controllers
                 });
             }
             var vm = Services.ReservationServices.convertToVM(reservation);
-
             return Ok(vm);
         }
 
-        // POST: api/Reservation
+        // POST: api/reservation
         [Authorize]
-        // TODO: Change how it stores userid why is this not hitting the database.
-        public IHttpActionResult PostUsersReservation(ReservationVM newReservation)
+        [ResponseType(typeof(Reservation))]
+        public IHttpActionResult Post([FromBody]ReservationVM vm)
         {
             var db = new ApplicationDBContext();
             var user = User.Identity as System.Security.Claims.ClaimsIdentity;
-            var reservation = ReservationServices.convertFromVM(newReservation, user);
+            if (UserServices.verifyUser(user) == false)
+            {
+                UserServices.createUser(user);
+            }
+            var reservation = ReservationServices.convertFromVM(vm, user);
+            db.Reservations.AddOrUpdate(reservation);
+            db.SaveChanges();
+            return Ok(reservation);
+        }
+
+        // Delete: api/reservation
+        [Authorize]
+        [ResponseType(typeof(void))]
+        public IHttpActionResult Delete()
+        {
+            var db = new ApplicationDBContext();
+            var user = User.Identity as System.Security.Claims.ClaimsIdentity;
+            var reservation = db.Reservations.OrderByDescending(f => f.startDate).FirstOrDefault(f => f.userID == user.Name);
+            if (reservation == null)
+            {
+                return Ok(new ReservationVM()
+                {
+                    found = false
+                });
+            }
+            db.Reservations.Remove(reservation);
+            db.SaveChanges();
+            return Ok("Removed successfully.");
+        }
+        // POST: api/reservation
+        [Authorize]
+        [ResponseType(typeof(Reservation))]
+        public IHttpActionResult Put([FromBody]ReservationVM vm)
+        {
+            var db = new ApplicationDBContext();
+            var user = User.Identity as System.Security.Claims.ClaimsIdentity;
+            if (UserServices.verifyUser(user) == false)
+            {
+                UserServices.createUser(user);
+            }
+            var reservation = ReservationServices.convertFromVM(vm, user);
             db.Reservations.AddOrUpdate(reservation);
             db.SaveChanges();
             return Ok(reservation);
         }
     }
-}
+}  

@@ -9,7 +9,6 @@ namespace EcoHostelAPI
 {
     public class SwaggerConfig
     {
-        // TODO: add a header description for api/user/get 
         public static void Register()
         {
             var thisAssembly = typeof(SwaggerConfig).Assembly;
