@@ -7,8 +7,8 @@ namespace EcoHostelAPI.ViewModels
 {
     public class ReservationVM
     {
-        public DateTime fromDate { get; set; }
-        public DateTime toDate { get; set; }
+        public DateTime? fromDate { get; set; }
+        public DateTime? toDate { get; set; }
         public int guestCount { get; set; }
         public string typeOfRoom { get; set; }
         public string name { get; set; }

@@ -44,6 +44,10 @@ namespace EcoHostelAPI.Controllers
         {
             var db = new ApplicationDBContext();
             var user = User.Identity as System.Security.Claims.ClaimsIdentity;
+            if (UserServices.verifyUser(user) == false)
+            {
+                UserServices.createUser(user);
+            }
             var reservation = ReservationServices.convertFromVM(vm, user);
             db.Reservations.AddOrUpdate(reservation);
             db.SaveChanges();
@@ -69,5 +73,21 @@ namespace EcoHostelAPI.Controllers
             db.SaveChanges();
             return Ok("Removed successfully.");
         }
+        // POST: api/reservation
+        [Authorize]
+        [ResponseType(typeof(Reservation))]
+        public IHttpActionResult Put([FromBody]ReservationVM vm)
+        {
+            var db = new ApplicationDBContext();
+            var user = User.Identity as System.Security.Claims.ClaimsIdentity;
+            if (UserServices.verifyUser(user) == false)
+            {
+                UserServices.createUser(user);
+            }
+            var reservation = ReservationServices.convertFromVM(vm, user);
+            db.Reservations.AddOrUpdate(reservation);
+            db.SaveChanges();
+            return Ok(reservation);
+        }
     }
-}
+}  

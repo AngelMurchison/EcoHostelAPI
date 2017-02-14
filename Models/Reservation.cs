@@ -16,11 +16,7 @@ namespace EcoHostelAPI.Models
         public int roomID { get; set; }
         public string roomType { get; set; }
         public int guestCount { get; set; }
-        public DateTime startDate { get; set; }
-        public DateTime endDate { get; set; }
-
-        [ForeignKey("roomID")]
-        public virtual Room room { get; set; }
-
+        public DateTime? startDate { get; set; }
+        public DateTime? endDate { get; set; }
     }
 }
